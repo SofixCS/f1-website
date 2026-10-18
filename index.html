@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formel 1 · Rennkalender &amp; Weltmeisterschaft</title>
+  <meta name="description" content="Formel 1: komplette Rennkalender, Sieger und WM-Stände der Saisons 2022–2026 plus nächster Grand Prix." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Titillium+Web:ital,wght@0,400;0,600;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="speedlines" aria-hidden="true"></div>
+
+  <nav class="topbar">
+    <div class="brand">
+      <span class="f1mark">F1</span>
+      <span class="brandtext">FORMULA<em>1</em></span>
+    </div>
+    <div class="navlinks">
+      <a href="#next">Nächster GP</a>
+      <a href="#calendar">Kalender 2026</a>
+      <a href="#standings">WM-Stände</a>
+    </div>
+    <div class="standbadge" id="standbadge">–</div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-kicker">WORLD CHAMPIONSHIP · 2022 – 2026</div>
+      <h1 class="hero-title">FORMULA <span>1</span></h1>
+      <p class="hero-sub">Alle Rennen, alle Sieger und die komplette Weltmeisterschaft – von den letzten fünf Saisons bis zum nächsten Grand Prix. Mit Strecken, Orten und Live-Countdown.</p>
+      <div class="hero-season" id="heroSeason"></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Nächster Grand Prix -->
+    <section id="next" class="section">
+      <div class="section-head">
+        <h2 class="section-title">Nächster Grand Prix</h2>
+      </div>
+      <div class="next-card" id="nextCard"><div class="loading">Lade Kalender …</div></div>
+    </section>
+
+    <!-- Rennkalender -->
+    <section id="calendar" class="section">
+      <div class="section-head">
+        <h2 class="section-title">Rennkalender <span class="accent">2026</span></h2>
+        <span class="section-sub" id="calCount"></span>
+      </div>
+      <div class="cal-grid" id="calGrid"><div class="loading">Lade Kalender …</div></div>
+    </section>
+
+    <!-- WM-Stände -->
+    <section id="standings" class="section">
+      <div class="section-head">
+        <h2 class="section-title">Weltmeisterschaft</h2>
+        <div class="season-tabs" id="seasonTabs"></div>
+      </div>
+      <div class="standings-grid">
+        <div class="stand-card">
+          <h3 class="stand-title">Fahrer-WM <span class="accent" id="drvSeason"></span></h3>
+          <div class="std-list" id="driverList"></div>
+        </div>
+        <div class="stand-card">
+          <h3 class="stand-title">Konstrukteurs-WM <span class="accent" id="conSeason"></span></h3>
+          <div class="std-list" id="conList"></div>
+        </div>
+      </div>
+      <div class="stand-card winners-card">
+        <h3 class="stand-title">Rennsieger der Saison <span class="accent" id="winSeason"></span></h3>
+        <div class="winners-grid" id="winnersGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="foot-row">
+      <span>Datenquelle: <a href="https://api.jolpi.ca/ergast/f1/" target="_blank" rel="noopener">Ergast F1 API</a> · Bilder: <a href="https://www.wikimedia.org" target="_blank" rel="noopener">Wikimedia</a></span>
+    </div>
+    <div class="foot-row" id="footNote"></div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
